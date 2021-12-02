@@ -9,6 +9,8 @@
   --white: #fff;
   --grey: grey;
   --black: black;
+  --success: green;
+  --error: red;
 }
 
 body {
@@ -17,7 +19,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 97vh;
 }
 
 .form {
@@ -56,11 +58,11 @@ body {
   border-color: #777;
 }
 
-.form-control .success input {
+.form-control.success input {
   border-color: var(--success);
 }
 
-.form-control .error input {
+.form-control.error input {
   border-color: var(--error);
 }
 
@@ -69,7 +71,7 @@ body {
   visibility: hidden;
 }
 
-.form-control .error small {
+.form-control.error small {
   visibility: visible;
 }
 
