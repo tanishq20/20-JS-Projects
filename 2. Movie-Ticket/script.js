@@ -21,12 +21,25 @@ function selectSeat(e) {
 
 function updateSelectedSeat(e) {
   const selectedSeat = document.querySelectorAll('.row .seat.selected')
+
+  const seatIndex = [...selectedSeat].map((seat) => {
+    return [...seats].indexOf(seat)
+  })
+
+  localStorage.setItem('selectedSeats', JSON.stringify(seatIndex))
+
   const selectedSeatLength = Number(selectedSeat.length)
   count.innerText = selectedSeatLength
   total.innerText = selectedSeatLength * ticketPrice
 }
 
 function updateTotalPrice(e) {
-  ticketPrice = e.target.value
+  ticketPrice = Number(e.target.value)
+  setMovieData(e.target.selectedIndex, ticketPrice)
   updateSelectedSeat(e)
+}
+
+function setMovieData(movieIndex, moviePrice) {
+  localStorage.setItem('SelectedMovieIndex', movieIndex)
+  localStorage.setItem('SelectedMoviePrice', moviePrice)
 }
