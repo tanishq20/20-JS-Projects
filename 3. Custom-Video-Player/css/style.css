@@ -64,7 +64,7 @@ h1 {
 }
 
 .controls .fa-pause {
-  color: white;
+  color: var(--black);
 }
 
 .controls .timestamp {
