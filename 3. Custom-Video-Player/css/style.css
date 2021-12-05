@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #004068;
+  --white: #fff;
+  --grey: grey;
+  --black: black;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  color: var(--white);
+}
+
+.screen {
+  cursor: pointer;
+  width: 60%;
+  background-color: var(--black) !important;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px;
+  width: 60%;
+}
+
+.controls .btn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.controls .fa-play {
+  color: green;
+}
+
+.controls .fa-stop {
+  color: red;
+}
+
+.controls .fa-pause {
+  color: white;
+}
+
+.controls .timestamp {
+  color: var(--black);
+  font-weight: 900;
+  margin-left: 5px;
+}
+
+@media (max-width: 800px) {
+  .controls,
+  .screen {
+    width: 90%;
+  }
+}
