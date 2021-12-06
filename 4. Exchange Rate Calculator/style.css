@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #004068;
+  --white: #fff;
+  --grey: grey;
+  --black: black;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: var(--white);
+}
+
+p {
+  color: var(--white);
+  text-align: center;
+}
+
+.btn {
+  color: var(--primary-color);
+  background-color: cyan;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid var(--grey);
+  font-size: 16px;
+  padding: 5px 12px;
+  font-weight: bold;
+}
+
+.money-img {
+  width: 150px;
+}
+
+.currency {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.currency select {
+  padding: 10px 20px 10px 20px;
+  border: 1px solid var(--grey);
+  font-size: 16px;
+  background: transparent;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.currency input {
+  border: 0;
+  border-radius: 5px;
+  font-size: 30px;
+  text-align: right;
+  padding: 5px;
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: 0;
+}
+
+.swap-rate-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rate {
+  color: var(--white);
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+@media (max-width: 600px) {
+  .currency input {
+    width: 200px;
+  }
+}
