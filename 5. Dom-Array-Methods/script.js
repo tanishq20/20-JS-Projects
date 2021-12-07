@@ -7,6 +7,7 @@ const calculateWealthBtn = document.querySelector('#calculate-wealth')
 
 addUserBtn.addEventListener('click', getRandomUser)
 doubleBtn.addEventListener('click', doubleMoney)
+sortBtn.addEventListener('click', sortByRichest)
 
 let data = []
 
@@ -50,6 +51,13 @@ function formatMoney(money) {
 function doubleMoney() {
   data = data.map((user) => {
     return { ...user, money: user.money * 2 }
+  })
+  updateDOM()
+}
+
+function sortByRichest() {
+  data.sort((a, b) => {
+    return b.money - a.money
   })
   updateDOM()
 }
