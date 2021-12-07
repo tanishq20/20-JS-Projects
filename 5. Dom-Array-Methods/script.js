@@ -6,6 +6,7 @@ const sortBtn = document.querySelector('#sort')
 const calculateWealthBtn = document.querySelector('#calculate-wealth')
 
 addUserBtn.addEventListener('click', getRandomUser)
+doubleBtn.addEventListener('click', doubleMoney)
 
 let data = []
 
@@ -44,4 +45,11 @@ function updateDOM(providedData = data) {
 
 function formatMoney(money) {
   return `₹ ${money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`
+}
+
+function doubleMoney() {
+  data = data.map((user) => {
+    return { ...user, money: user.money * 2 }
+  })
+  updateDOM()
 }
