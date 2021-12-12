@@ -7,8 +7,6 @@
 :root {
   --primary-color: #004068;
   --white: #fff;
-  --grey: grey;
-  --black: black;
 }
 
 body {
@@ -61,4 +59,121 @@ nav ul li a {
 
 nav ul li:hover {
   text-decoration: underline;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 130%;
+  position: relative;
+  padding: 40px 15px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 30px 0;
+}
+
+button,
+input[type='submit'] {
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.toggle {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--white);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.cta-btn {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--white);
+  padding: 12px 30px;
+  font-size: 20px;
+}
+
+.container {
+  padding: 15px;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 800px;
+}
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal {
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+}
+
+.modal-header {
+  background-color: var(--primary-color);
+  padding: 15px;
+  color: var(--white);
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-form div {
+  margin: 15px 0;
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal-form .modal-input {
+  padding: 8px;
+  width: 100%;
+}
+
+.close-btn {
+  background: transparent;
+  font-size: 25px;
+  position: absolute;
+  color: var(--white);
+  top: 0;
+  right: 0;
+}
+
+.submit-btn {
+  display: block;
+  margin: auto;
+  background-color: var(--primary-color);
+  color: var(--white);
 }
