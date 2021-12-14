@@ -10,7 +10,7 @@ const words = ['application', 'programming', 'interface', 'wizard']
 
 let selectedWord = words[Math.floor(Math.random() * words.length)]
 
-const correctLetters = ['w', 'i', 'z', 'a', 'r', 'd']
+const correctLetters = []
 const wrongLetters = []
 
 function displayWord() {
@@ -31,6 +31,42 @@ function displayWord() {
     finalMessage.innerText = 'Yaay!! You have won'
     popup.style.display = 'flex'
   }
+}
+
+// displayWord()
+
+window.addEventListener('keydown', (e) => {
+  if (e.keyCode >= 65 && e.keyCode <= 90) {
+    const letter = e.key
+    if (selectedWord.includes(letter)) {
+      if (!correctLetters.includes(letter)) {
+        correctLetters.push(letter)
+        displayWord()
+      } else {
+        showNotification()
+      }
+    } else {
+      if (!wrongLetters.includes(letter)) {
+        wrongLetters.push(letter)
+
+        updateWrongLettersEl()
+      } else {
+        showNotification()
+      }
+    }
+  }
+})
+
+function updateWrongLettersEl() {
+  console.log('Updated wrong')
+}
+
+function showNotification() {
+  notification.classList.add('show')
+
+  setTimeout(() => {
+    notification.classList.remove('show')
+  }, 2000)
 }
 
 displayWord()
