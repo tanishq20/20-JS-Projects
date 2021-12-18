@@ -20,7 +20,7 @@ function searchMeal(e) {
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        resultHeading.innerHTML = `<h2>Search Results for '${term}':</h2>`
+        resultHeading.innerHTML = `<h2>Search Results for '${term}' :</h2>`
 
         if (data.meals === null) {
           resultHeading.innerHTML = `<p>There are no serach results. Try again!</p>`
