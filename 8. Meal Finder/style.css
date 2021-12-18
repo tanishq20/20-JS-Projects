@@ -44,6 +44,8 @@ button {
 
 input[type='text'] {
   width: 300px;
+  padding: 10px;
+  outline: none;
 }
 
 .search-btn {
