@@ -11,3 +11,4 @@ In this repo we will make 20 projects based on JS.
 5. [DOM Array Methods](https://high-order-functions.netlify.app/)
 6. [Menu Slider Modal](https://modal-menu-slider.netlify.app/)
 7. [Hangman Game](https://deadman-game.netlify.app/)
+8. [Meal Finder](https://find-meals.netlify.app/)
