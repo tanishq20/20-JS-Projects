@@ -19,6 +19,9 @@ playBtn.addEventListener('click', () => {
   }
 })
 
+prevBtn.addEventListener('click', prevSong)
+nextBtn.addEventListener('click', nextSong)
+
 // song title
 const songs = ['hey', 'summer', 'ukulele']
 
@@ -49,4 +52,28 @@ function pauseSong() {
   playBtn.querySelector('i.fas').classList.add('fa-play')
 
   audio.pause()
+}
+
+function prevSong() {
+  songIndex--
+
+  if (songIndex < 0) {
+    songIndex = songs.length - 1
+  }
+
+  loadSong(songs[songIndex])
+
+  playSong()
+}
+
+function nextSong() {
+  songIndex++
+
+  if (songIndex > songs.length - 1) {
+    songIndex = 0
+  }
+
+  loadSong(songs[songIndex])
+
+  playSong()
 }
