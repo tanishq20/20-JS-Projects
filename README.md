@@ -13,3 +13,4 @@ In this repo we will make 20 projects based on JS.
 7. [Hangman Game](https://deadman-game.netlify.app/)
 8. [Meal Finder](https://find-meals.netlify.app/)
 9. [Expense Tracker](https://expense-keeper.netlify.app/)
+10. [Custom Music Player](https://customized-music-player.netlify.app/)
