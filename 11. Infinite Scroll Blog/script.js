@@ -2,9 +2,7 @@ const postsContainer = document.querySelector('#posts-container')
 const loading = document.querySelector('.loader')
 const filter = document.querySelector('#filter')
 
-let limit = 5
-let page = 1
-
+// Event listeners
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement
 
@@ -12,6 +10,11 @@ window.addEventListener('scroll', () => {
     showLoading()
   }
 })
+
+filter.addEventListener('input', filterPosts)
+
+let limit = 5
+let page = 1
 
 // Fetch posts from api
 async function getPosts() {
@@ -58,4 +61,20 @@ function showLoading() {
       showPosts()
     }, 300)
   }, 1000)
+}
+
+function filterPosts(e) {
+  const term = e.target.value.toUpperCase()
+  const posts = document.querySelectorAll('.post')
+
+  posts.forEach((post) => {
+    const title = post.querySelector('.post-title').innerText.toUpperCase()
+    const body = post.querySelector('.post-body').innerText.toUpperCase()
+
+    if (title.indexOf(term) > -1 || body.indexOf(term) > -1) {
+      post.style.display = 'flex'
+    } else {
+      post.style.display = 'none'
+    }
+  })
 }
