@@ -8,7 +8,29 @@ const settings = document.querySelector('#settings')
 const settingsForm = document.querySelector('#settings-form')
 const difficultySelect = document.querySelector('#difficulty')
 
+// Init word
+let randomWord
+
+// Init score
+let score = 0
+
+// Init time
+let time = 10
+
+// Set difficulty to value in localstorage or medium
+let difficulty =
+  localStorage.getItem('difficulty') !== null
+    ? localStorage.getItem('difficulty')
+    : 'medium'
+
+// Set difficulty  select value
+difficultySelect.value = difficulty
+
+// Focus on text on start
+text.focus()
+
 // Event Listener
+// Typing
 text.addEventListener('input', (e) => {
   const insertedText = e.target.value
 
@@ -19,10 +41,27 @@ text.addEventListener('input', (e) => {
     // Clear
     e.target.value = ''
 
-    time += 5
+    if (difficulty === 'hard') {
+      time += 2
+    } else if (difficulty === 'medium') {
+      time += 3
+    } else if (difficulty === 'easy') {
+      time += 5
+    }
 
     updateTime()
   }
+})
+
+// Settings btn click
+settingsBtn.addEventListener('click', () => {
+  settings.classList.toggle('hide')
+})
+
+// Settings select
+settingsForm.addEventListener('change', (e) => {
+  difficulty = e.target.value
+  localStorage.setItem('difficulty', difficulty)
 })
 
 // List of words for game
@@ -48,18 +87,6 @@ const words = [
   'drag',
   'loving',
 ]
-
-// Init word
-let randomWord
-
-// Init score
-let score = 0
-
-// Init time
-let time = 10
-
-// Focus on text on start
-text.focus()
 
 // Start counting down
 const timeInterval = setInterval(updateTime, 1000)
