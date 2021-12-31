@@ -15,3 +15,4 @@ In this repo we will make 20 projects based on JS.
 9.  [Expense Tracker](https://expense-keeper.netlify.app/)
 10. [Custom Music Player](https://customized-music-player.netlify.app/)
 11. [Infinite Scroll Blog](https://infinite-bolg.netlify.app/)
+12. [Speed Tester](https://speed-checker.netlify.app/)
